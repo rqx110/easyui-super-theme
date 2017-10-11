@@ -30,7 +30,7 @@ gulp.task('autoprefixer', function () {
                 remove: false //是否去掉不必要的前缀 默认：true
             }))
             .pipe(minifycss()) //执行压缩
-            .pipe(gulp.dest('src/css'));
+            .pipe(gulp.dest('src/demo/css'));
     } else {
         return gulp.src('src/demo/sass/super*.scss')
             .pipe(sourcemaps.init())
