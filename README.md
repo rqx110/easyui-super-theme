@@ -1,4 +1,4 @@
-#easyui-super-theme
+# easyui-super-theme
 基于easyui最新版1.5.1的一套皮肤，flat ui的配色，字体图标用的是[fontawesome](http://fontawesome.dashgame.com/)
 
 虽然现在都流行vue，react，angular组件库，但了解到依然有很多小伙伴在用这个做后台管理系统，就稍微完善一下共享给大家，会抽空继续完善，喜欢的话就顺手给个星吧！~
