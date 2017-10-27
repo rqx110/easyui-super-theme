@@ -3262,10 +3262,9 @@ Explain:		Clearfix（简写cl）避免因子元素浮动而导致的父元素高
   background: #fbfbfb;
   transition: background-color .3s; }
   .accordion .accordion-header:hover {
-    background: #e2e2e2; }
+    background: #eee; }
 
 .accordion .accordion-header-selected {
-  background: #e2e2e2;
   box-shadow: inset 3px 0px 0px 0px #1abc9c; }
   .accordion .accordion-header-selected .panel-title {
     color: #000; }
@@ -3317,10 +3316,10 @@ Explain:		Clearfix（简写cl）避免因子元素浮动而导致的父元素高
   margin: 0 2px; }
 
 /*.tabs li.tabs-selected .tabs-title{
-    color: $theme-color;
+	color: $theme-color;
 }
 .tabs li.tabs-selected .tabs-icon{
-    color: $theme-color;
+	color: $theme-color;
 }*/
 .tabs li a.tabs-inner {
   border-radius: 0px 0px 0 0;

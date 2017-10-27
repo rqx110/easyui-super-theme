@@ -1,16 +1,27 @@
 $(function() {
 	// 初始化主题
-	if(localStorage.getItem('superTheme')) {
-		var themeName = localStorage.getItem('superTheme');
-		$('#themeCss').after('<link rel="stylesheet" href="css/' + themeName + '" id="themeCss">');
+	var initTheme = function(themeName) {
+		if(themeName == null) {
+			themeName = $('#themeCss').attr('href').split('/').pop().split('.css')[0];
+			// 添加勾选状态
+			$(".themeItem ul li").removeClass('themeActive');
+			$('.themeItem ul li .' + themeName).parent().addClass('themeActive');
+			return;
+		}
+		var themeUrl = $('#themeCss').attr('href').split('/');
+		themeUrl.pop();
+		$('#themeCss').after('<link rel="stylesheet" href="' + themeUrl.join('/') + '/' + themeName + '.css" id="themeCss">');
 		$('#themeCss').remove();
+
 		// 添加勾选状态
 		$(".themeItem ul li").removeClass('themeActive');
-		$('.themeItem ul li .' + themeName.split('.css')[0]).parent().addClass('themeActive');
+		$('.themeItem ul li .' + themeName).parent().addClass('themeActive');
 	}
 
+	initTheme(localStorage.getItem('superTheme'));
+
 	// 左侧导航分类选中样式
-	$(".panel-body .accordion-body>ul>li").on('click', function() {
+	$(".panel-body .accordion-body>ul").on('click', 'li', function() {
 		$(this).siblings().removeClass('super-accordion-selected');
 		$(this).addClass('super-accordion-selected');
 
@@ -52,9 +63,8 @@ $(function() {
 				handler: function() {
 					themeWin.panel('close');
 					// css
-					var themeName = $(".themeItem ul li.themeActive>div").attr('class') + '.css';
-					$('#themeCss').after('<link rel="stylesheet" href="css/' + themeName + '" id="themeCss">');
-					$('#themeCss').remove();
+					var themeName = $(".themeItem ul li.themeActive>div").attr('class');
+					initTheme(themeName);
 					localStorage.setItem('superTheme', themeName);
 				}
 			}, {
@@ -68,7 +78,7 @@ $(function() {
 			}
 		});
 	});
-	
+
 	// 勾选主题
 	$(".themeItem ul li").on('click', function() {
 		$(".themeItem ul li").removeClass('themeActive');

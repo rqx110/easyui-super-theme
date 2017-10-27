@@ -3262,10 +3262,9 @@ Explain:		Clearfix（简写cl）避免因子元素浮动而导致的父元素高
   background: #fbfbfb;
   transition: background-color .3s; }
   .accordion .accordion-header:hover {
-    background: #e2e2e2; }
+    background: #eee; }
 
 .accordion .accordion-header-selected {
-  background: #e2e2e2;
   box-shadow: inset 3px 0px 0px 0px #3498db; }
   .accordion .accordion-header-selected .panel-title {
     color: #000; }
